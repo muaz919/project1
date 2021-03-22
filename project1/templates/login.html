@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    books
+{% endblock %}
+
+{% block head %}
+  {{ super() }}  
+<style type="text/css"> /* super() is To render the contents of a block defined in the parent template*/
+
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 10%;
+  border-radius: 20%;
+}
+
+.container {
+  padding: 16px;
+}
+
+.cancelbtn {
+  width: auto; /*buatkan width dia kecil walaupun <button> width 100%*/
+  padding: 10px 10px;
+  background-color: #f12315b9;
+}
+
+span.res {
+  float: right;
+  padding-top: 16px;
+}
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align: center;">Login to Book heaven</h1>
+<h2 style="text-align: center;">Login Form</h2>
+
+<form action="/login" method="post">
+
+  <div class="imgcontainer">
+    <img src="{{url_for('static', filename='book.jpg')}}" alt="book" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label><br>
+    <input type="text" placeholder="Enter Username" name="username" type=text required><br>
+
+    <label for="psw"><b>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" name="password" type=password required>
+        
+    <button type="btn btn-primary" value="submit">Login</button><br>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="res">Have you <a href="/register">Register yet?</a></span>
+  </div>
+ 
+</form>
+
+{% endblock %}
