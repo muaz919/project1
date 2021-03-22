@@ -21,7 +21,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Set up database
-engine = create_engine("postgres://osxvrpxjoxuwlm:38bf3cd2e0655e7fb0e0e6827955dbba7eceb2e349686dffce73355fb47af3e9@ec2-18-233-32-61.compute-1.amazonaws.com:5432/damepngmrr7kl2")
+engine = create_engine("PostgreSQl Host")
 db = scoped_session(sessionmaker(bind=engine))
 
 
